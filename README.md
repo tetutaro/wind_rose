@@ -52,3 +52,7 @@
         * `year`： 通年
         * `summer`： 冬以外の季節（4月〜11月）
         * `winter`： 冬（12月〜3月）
+
+## サンプル
+
+![wind_percentage_year](samples/wind_percentage_year.png)
