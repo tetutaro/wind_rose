@@ -1,0 +1,108 @@
+[tool.black]
+line-length = 80
+
+[tool.isort]
+profile = "black"
+line_length = 80
+multi_line_output = 3
+include_trailing_comma = true
+combine_as_imports = true
+src_paths = [
+    "src",
+    "src/analysis",
+    "src/webapp",
+]
+virtual_env = ".venv"
+
+[tool.ruff]
+line-length = 80
+src = [
+    "src",
+    "src/analysis",
+    "src/webapp",
+]
+exclude = [
+    "src/trials",
+]
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["C", "E", "F", "I", "N", "NPY", "PD", "UP", "W"]
+ignore = [
+    "E203",
+    "N803",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 15
+
+[tool.ruff.lint.pep8-naming]
+classmethod-decorators = [
+    # Allow Pydantic's `@validator` decorator to trigger class method treatment.
+    "pydantic.validator",
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
+known-local-folder = [
+    "src",
+    "src/analysis",
+    "src/webapp",
+]
+split-on-trailing-comma = true
+
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = [
+    "N802",
+    "E501",
+]
+"*/test_*.py" = [
+    "N802",
+    "E501",
+]
+
+[tool.mypy]
+python_version = "3.11"
+allow_redefinition = true
+allow_untyped_globals = false
+check_untyped_defs = true
+color_output = true
+disallow_incomplete_defs = false
+disallow_untyped_calls = false
+disallow_untyped_decorators = false
+disallow_untyped_defs = false
+error_summary = true
+ignore_missing_imports = true
+implicit_reexport = true
+namespace_packages = true
+no_implicit_optional = true
+pretty = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+show_traceback = true
+#strict = true
+warn_redundant_casts = true
+warn_unused_configs = true
+# TODO: change false to true
+warn_unused_ignores = false
+exclude = [
+    "src/trials\\.py",
+]
+
+[[tool.mypy.overrides]]
+module = "polars"
+follow_imports = "skip"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::_pytest.warning_types.PytestWarning",
+    "ignore::DeprecationWarning",
+]

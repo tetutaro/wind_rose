@@ -1,0 +1,14 @@
+-c requirements.txt
+
+black
+coverage
+isort
+mypy
+pytest
+pytest-black
+pytest-isort
+python-lsp-ruff
+python-lsp-server
+pytest-mypy
+pytest-ruff
+ruff
