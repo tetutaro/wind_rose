@@ -1,6 +1,6 @@
 # wind rose
 
-[風配図](https://ja.wikipedia.org/wiki/%E9%A2%A8%E9%85%8D%E5%9B%B3)（Wind Rose）を作る
+[風配図](https://ja.wikipedia.org/wiki/%E9%A2%A8%E9%85%8D%E5%9B%B3)（Wind Rose Diagram）を作る
 
 ## データの準備
 
@@ -36,7 +36,7 @@
 
 ## 動かし方
 
-* `./wind.rose.py [--angle ANGLE]` で実行
+* `./wind_rose.py [--angle ANGLE]`
     * `ANGLE` の単位は度（°）で、半時計回り方向
     * 省略した場合は `0`（北が上）
 
